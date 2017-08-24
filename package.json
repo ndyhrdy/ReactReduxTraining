@@ -1,0 +1,33 @@
+{
+  "name": "react-redux",
+  "version": "1.0.0",
+  "description": "React and Redux Training",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "laravel-mix": "^1.4.2",
+    "react": "^15.6.1",
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.0",
+    "redux": "^3.7.2"
+  },
+  "devDependencies": {
+    "babel-preset-react": "^6.24.1",
+    "browser-sync": "^2.18.13",
+    "browser-sync-webpack-plugin": "^1.2.0",
+    "cross-env": "^5.0.5",
+    "laravel-mix": "^1.4.2",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.0",
+    "redux": "^3.7.2"
+  },
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "cross-env NODE_ENV=development webpack --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "hot": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "cross-env NODE_ENV=production webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "author": "Endy Hardy",
+  "license": "MIT"
+}

@@ -3,6 +3,10 @@ import UserForm from './UserForm'
 
 class Users extends React.Component {
 
+	componentDidMount() {
+		return this.props.onInit();
+	}
+
 	render() {
 		return (
 			<div>

@@ -11,7 +11,7 @@ class Main extends React.Component {
 			<div>
 				<h1>Redux Training</h1>
 				<Route exact path="/" render={ () => <Dashboard /> } />
-				<Route path="/users" render={ () => <Users users={ this.props.users } onAdd={ this.props.addUser } /> } />
+				<Route path="/users" render={ () => <Users users={ this.props.users } onInit={ this.props.loadUsers } onAdd={ this.props.addUser } /> } />
 			</div>
 			);
 	}

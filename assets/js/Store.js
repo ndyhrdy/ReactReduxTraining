@@ -1,5 +1,6 @@
-import { createStore, compose } from 'redux'
+import Thunk from 'redux-thunk'
 import RootReducer from './Reducers/Index'
+import { createStore, compose, applyMiddleware } from 'redux'
 
 const defaultState = {
 	users: [
@@ -7,5 +8,11 @@ const defaultState = {
 	]
 };
 
-const Store = createStore(RootReducer, defaultState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const Store = createStore(
+	RootReducer, 
+	defaultState, 
+	composeEnhancers(applyMiddleware(Thunk))
+	);
 export default Store;

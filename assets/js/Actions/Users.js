@@ -1,13 +1,17 @@
 import UsersApi from '../Api/Users'
+import {
+	ADD_USER,
+	POPULATE_USERS
+} from './Types'
 
-export function addUser(user) {
+export const addUser = user => {
 	return {
-		type: 'ADD_USER',
+		type: ADD_USER,
 		user
 	};
 }
 
-export function loadUsers() {
+export const loadUsers = () => {
 	return function (dispatch) {
 		return UsersApi.get().then(users => {
 			dispatch(populateUsers(users));
@@ -17,9 +21,9 @@ export function loadUsers() {
 	};
 }
 
-export function populateUsers(users) {
+export const populateUsers = users => {
 	return {
-		type: 'POPULATE_USERS',
+		type: POPULATE_USERS,
 		users
 	};
 }

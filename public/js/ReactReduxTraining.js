@@ -28956,7 +28956,7 @@ function Users() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_redux__ = __webpack_require__(99);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Actions_ActionCreators__ = __webpack_require__(272);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Actions_Index__ = __webpack_require__(306);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Main__ = __webpack_require__(273);
 
 
@@ -28971,7 +28971,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-	return Object(__WEBPACK_IMPORTED_MODULE_0_redux__["b" /* bindActionCreators */])(__WEBPACK_IMPORTED_MODULE_3__Actions_ActionCreators__, dispatch);
+	return Object(__WEBPACK_IMPORTED_MODULE_0_redux__["b" /* bindActionCreators */])(__WEBPACK_IMPORTED_MODULE_3__Actions_Index__, dispatch);
 }
 
 var App = Object(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* withRouter */])(Object(__WEBPACK_IMPORTED_MODULE_1_react_redux__["b" /* connect */])(mapStateToProps, mapDispatchToProps)(__WEBPACK_IMPORTED_MODULE_4__Main__["a" /* default */]));
@@ -28979,42 +28979,7 @@ var App = Object(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* withRoute
 /* harmony default export */ __webpack_exports__["a"] = (App);
 
 /***/ }),
-/* 272 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (immutable) */ __webpack_exports__["addUser"] = addUser;
-/* harmony export (immutable) */ __webpack_exports__["loadUsers"] = loadUsers;
-/* harmony export (immutable) */ __webpack_exports__["populateUsers"] = populateUsers;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Api_Users__ = __webpack_require__(278);
-
-
-function addUser(user) {
-	return {
-		type: 'ADD_USER',
-		user: user
-	};
-}
-
-function loadUsers() {
-	return function (dispatch) {
-		return __WEBPACK_IMPORTED_MODULE_0__Api_Users__["a" /* default */].get().then(function (users) {
-			dispatch(populateUsers(users));
-		}).catch(function (error) {
-			throw error;
-		});
-	};
-}
-
-function populateUsers(users) {
-	return {
-		type: 'POPULATE_USERS',
-		users: users
-	};
-}
-
-/***/ }),
+/* 272 */,
 /* 273 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -30914,6 +30879,65 @@ module.exports = function spread(callback) {
   };
 };
 
+
+/***/ }),
+/* 305 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return addUser; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return loadUsers; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return populateUsers; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Api_Users__ = __webpack_require__(278);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Types__ = __webpack_require__(307);
+
+
+
+var addUser = function addUser(user) {
+	return {
+		type: __WEBPACK_IMPORTED_MODULE_1__Types__["a" /* ADD_USER */],
+		user: user
+	};
+};
+
+var loadUsers = function loadUsers() {
+	return function (dispatch) {
+		return __WEBPACK_IMPORTED_MODULE_0__Api_Users__["a" /* default */].get().then(function (users) {
+			dispatch(populateUsers(users));
+		}).catch(function (error) {
+			throw error;
+		});
+	};
+};
+
+var populateUsers = function populateUsers(users) {
+	return {
+		type: __WEBPACK_IMPORTED_MODULE_1__Types__["b" /* POPULATE_USERS */],
+		users: users
+	};
+};
+
+/***/ }),
+/* 306 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Users__ = __webpack_require__(305);
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "addUser", function() { return __WEBPACK_IMPORTED_MODULE_0__Users__["a"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "loadUsers", function() { return __WEBPACK_IMPORTED_MODULE_0__Users__["b"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "populateUsers", function() { return __WEBPACK_IMPORTED_MODULE_0__Users__["c"]; });
+
+
+/***/ }),
+/* 307 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return POPULATE_USERS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ADD_USER; });
+var POPULATE_USERS = 'POPULATE_USERS';
+var ADD_USER = 'ADD_USER';
 
 /***/ })
 /******/ ]);

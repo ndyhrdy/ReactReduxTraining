@@ -3,9 +3,10 @@ import RootReducer from './Reducers/Index'
 import { createStore, compose, applyMiddleware } from 'redux'
 
 const defaultState = {
-	users: [
-		{ name: 'Endy Hardy', email: 'endy0611@gmail.com' }
-	]
+	roles: [
+		{ slug: 'sysadmin', name: 'App Administrator' }
+	],
+	users: [],
 };
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

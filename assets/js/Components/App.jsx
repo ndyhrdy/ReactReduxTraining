@@ -6,7 +6,8 @@ import Main from './Main'
 
 function mapStateToProps(state) {
 	return {
-		users: state.users
+		users: state.users,
+		roles: state.roles
 	};
 }
 

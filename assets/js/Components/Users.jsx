@@ -1,5 +1,7 @@
 import React from 'react'
 import UserForm from './UserForm'
+import RoleForm from './RoleForm'
+import UsersList from './UsersList'
 
 class Users extends React.Component {
 
@@ -11,27 +13,13 @@ class Users extends React.Component {
 		return (
 			<div>
 				<h2>Users List</h2>
-				<table>
-					<thead>
-						<tr>
-							<th>Name</th>
-							<th>Email</th>
-						</tr>
-					</thead>
-					<tbody>
-						{
-							this.props.users.map((user, i) => {
-								return (
-									<tr key={ i }>
-										<td>{ user.name }</td>
-										<td>{ user.email }</td>
-									</tr>
-									);
-							})
-						}
-					</tbody>
-				</table>
-				<UserForm onSave={ this.props.onAdd } />
+				<UsersList users={ this.props.users } />
+				<br />
+				<h2>Add User</h2>
+				<UserForm onSave={ this.props.onAdd } roles={ this.props.roles } />
+				<br />
+				<h2>Add Role</h2>
+				<RoleForm onSave={ this.props.onAddRole } />
 			</div>
 			);
 	}
